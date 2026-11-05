@@ -1,0 +1,59 @@
+name: heartbeat
+
+on:
+  schedule:
+    - cron: "41 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: heartbeat
+  cancel-in-progress: false
+
+jobs:
+  status:
+    # Schedules always run on the default branch; their payload may lack the repository field.
+    if: github.event_name == 'schedule' || github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Write status
+        run: python -m lifecycle.status
+
+      - name: Commit and push status
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BASE: ${{ github.event.repository.default_branch }}
+        run: |
+          if [ -z "$BASE" ]; then
+            BASE=$(gh repo view --json defaultBranchRef -q .defaultBranchRef.name)
+          fi
+          if [ -z "$(git status --porcelain -- status/)" ]; then
+            echo "No status change."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- status/
+          git commit -q -m "chore: update status"
+          git pull -q --rebase origin "$BASE"
+          git push origin "HEAD:$BASE"
+
+      - name: Fail if a source failed or the data is stale
+        run: |
+          python3 - <<'PY'
+          import json, sys
+          failed = json.load(open("status/status.json"))["sources_failed"]
+          color = json.load(open("status/badge-data.json"))["color"]
+          reasons = ([f"sources failed: {', '.join(failed)}"] if failed else []) + (["data verified badge is red"] if color == "red" else [])
+          if reasons:
+              print("; ".join(reasons))
+              sys.exit(1)
+          PY

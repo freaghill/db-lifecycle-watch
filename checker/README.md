@@ -26,8 +26,8 @@ You also need the `resource-graph` extension for `az`. Cloud Shell has it. Local
 In Azure Cloud Shell (Bash):
 
 ```sh
-git clone <this repository>
-cd <repository>
+git clone https://github.com/freaghill/db-lifecycle-watch.git
+cd db-lifecycle-watch
 python3 checker/azure_es_check.py
 ```
 
