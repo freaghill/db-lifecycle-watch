@@ -1,0 +1,6 @@
+{
+  "NextPageLink": null,
+  "Items": [
+    {"armRegionName": "eastus", "productName": "Azure Database for MySQL Extended Support", "meterName": "Extd Spprt Free Tier vCore", "skuName": "Extd Spprt Free Tier", "retailPrice": 0.0, "currencyCode": "USD", "type": "Consumption", "unitOfMeasure": "1 Hour"}
+  ]
+}

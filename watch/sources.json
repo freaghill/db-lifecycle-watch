@@ -1,0 +1,100 @@
+{
+  "sources": [
+    {
+      "id": "azure-postgresql-extended-support",
+      "kind": "html",
+      "url": "https://learn.microsoft.com/en-us/azure/postgresql/configure-maintain/extended-support",
+      "sections": [
+        {
+          "heading": "Eligible PostgreSQL versions"
+        },
+        {
+          "heading": "Enrollment and price",
+          "keep": "digest"
+        }
+      ]
+    },
+    {
+      "id": "azure-postgresql-version-policy",
+      "kind": "html",
+      "url": "https://learn.microsoft.com/en-us/azure/postgresql/configure-maintain/concepts-version-policy",
+      "sections": [
+        {
+          "heading": "Support policy"
+        }
+      ]
+    },
+    {
+      "id": "azure-mysql-version-policy",
+      "kind": "html",
+      "url": "https://learn.microsoft.com/en-us/azure/mysql/concepts-version-policy",
+      "sections": [
+        {
+          "heading": "Major version retirement policy"
+        },
+        {
+          "heading": "What happens after standard support ends?",
+          "keep": "digest"
+        }
+      ]
+    },
+    {
+      "id": "aws-rds-postgresql-release-calendar",
+      "kind": "markdown",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/PostgreSQLReleaseNotes/postgresql-release-calendar.md",
+      "sections": [
+        {
+          "heading": "Release calendar for Amazon RDS for PostgreSQL major versions"
+        }
+      ]
+    },
+    {
+      "id": "aws-rds-mysql-version-management",
+      "kind": "markdown",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Concepts.VersionMgmt.md",
+      "sections": [
+        {
+          "heading": "Supported MySQL major versions on Amazon RDS"
+        }
+      ]
+    },
+    {
+      "id": "aws-rds-extended-support-overview",
+      "kind": "markdown",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.md",
+      "sections": [
+        {
+          "heading": "Amazon RDS Extended Support with Amazon RDS",
+          "keep": "digest"
+        }
+      ]
+    },
+    {
+      "id": "aws-rds-extended-support-charges",
+      "kind": "markdown",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support-charges.md",
+      "sections": [
+        {
+          "heading": "Amazon RDS Extended Support charges",
+          "keep": "digest"
+        }
+      ]
+    },
+    {
+      "id": "azure-updates-postgresql-mysql-lifecycle",
+      "kind": "azure-updates",
+      "url": "https://www.microsoft.com/releasecommunications/api/v2/azure",
+      "params": {
+        "$filter": "(contains(tolower(title),'postgres') or contains(tolower(title),'mysql')) and (contains(tolower(title),'end of standard support') or contains(tolower(title),'end of support') or contains(tolower(title),'extended support') or contains(tolower(title),'retire') or contains(tolower(title),'deprecat') or contains(tolower(title),'end of life'))"
+      }
+    },
+    {
+      "id": "azure-retail-prices-extended-support",
+      "kind": "azure-prices",
+      "url": "https://prices.azure.com/api/retail/prices",
+      "params": {
+        "$filter": "productName eq 'Azure Database for Postgres Extended Support' or productName eq 'Azure Database for MySQL Extended Support'"
+      }
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+name: watch sources
+
+on:
+  schedule:
+    - cron: "17 5,17 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: watch-sources
+  cancel-in-progress: false
+
+env:
+  BRANCH: bot/source-changes
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate dataset
+        id: validate
+        continue-on-error: true
+        run: python -m lifecycle.validate
+
+      - name: Watch sources
+        id: watch
+        continue-on-error: true
+        run: python -m lifecycle.watch
+
+      - name: Open or update the review PR
+        # Schedules always run on the default branch; their payload may lack the repository field.
+        if: github.event_name == 'schedule' || github.ref_name == github.event.repository.default_branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BASE: ${{ github.event.repository.default_branch }}
+        run: |
+          if [ -z "$BASE" ]; then
+            BASE=$(gh repo view --json defaultBranchRef -q .defaultBranchRef.name)
+          fi
+          if [ -z "$(git status --porcelain -- watch/snapshots)" ]; then
+            echo "No snapshot changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$BRANCH"
+          git add watch/snapshots
+          git commit -q -m "chore: update source snapshots"
+
+          # A closed, unmerged PR with the same snapshot tree means a person dismissed exactly this change.
+          tree=$(git rev-parse HEAD:watch/snapshots)
+          marker="snapshot-tree: $tree"
+          dismissed=$(gh pr list --head "$BRANCH" --state closed --limit 50 --json body,mergedAt \
+            --jq "[.[] | select(.mergedAt == null and ((.body // \"\") | contains(\"$marker\")))] | length")
+          if [ "$dismissed" != "0" ]; then
+            echo "This snapshot content was dismissed in a closed PR. Not reopening."
+            exit 0
+          fi
+
+          if git fetch -q origin "$BRANCH" 2>/dev/null && git diff --quiet FETCH_HEAD HEAD; then
+            echo "Review branch already has these snapshots, no push needed."
+          else
+            git push --force origin "$BRANCH"
+          fi
+
+          body="$RUNNER_TEMP/body.md"
+          diff="$RUNNER_TEMP/snapshots.diff"
+          git diff HEAD~1 -- watch/snapshots > "$diff"
+          {
+            echo "The watcher saw changes in these official sources. Check them and update data/lifecycle.json by hand if a date or price moved."
+            echo
+            git diff --name-only HEAD~1 -- watch/snapshots | sed 's|^watch/snapshots/||; s|\.[a-z]*$||' \
+              | python3 -c '
+          import json, sys
+          sources = {s["id"]: s for s in json.load(open("watch/sources.json"))["sources"]}
+          for sid in sys.stdin.read().split():
+              s = sources.get(sid, {})
+              url = s.get("url", "unknown source")
+              print("- " + sid + ": " + url)
+              for sec in s.get("sections", []):
+                  print("  - section: " + sec["heading"])
+                  if sec.get("keep") == "digest":
+                      print("    digest changed: re-read the section at the URL")
+          '
+            echo
+            echo "$marker"
+            echo
+            echo '~~~~diff'
+            if [ "$(wc -c < "$diff")" -gt 60000 ]; then
+              head -c 60000 "$diff" | sed '$d'
+              echo '~~~~'
+              echo
+              echo "(diff truncated, see branch)"
+            else
+              cat "$diff"
+              echo '~~~~'
+            fi
+          } > "$body"
+
+          pr=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')
+          if [ -n "$pr" ]; then
+            gh pr edit "$pr" --body-file "$body"
+          else
+            gh pr create --base "$BASE" --head "$BRANCH" --title "Source changes to review" --body-file "$body"
+          fi
+
+      - name: Fail if validation or a fetch failed
+        if: steps.validate.outcome == 'failure' || steps.watch.outcome == 'failure'
+        run: |
+          echo "validate: ${{ steps.validate.outcome }}, watch: ${{ steps.watch.outcome }}"
+          exit 1

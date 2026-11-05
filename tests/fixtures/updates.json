@@ -1,0 +1,13 @@
+{
+  "@odata.context": "https://example.invalid/$metadata",
+  "value": [
+    {"id": "900003", "title": "Retirement: Example Database for MySQL 5.7 extended support ends", "tags": ["Retirements"], "created": "2026-05-02T10:00:00Z", "modified": "2026-05-03T08:00:00Z", "description": "<p>ignored</p>"},
+    {"id": "900001", "title": "Announcing: Extended Support for Azure Database for PostgreSQL Flexible Server", "tags": ["Announcement"], "created": "2026-08-24T12:00:00Z", "modified": "2026-08-24T12:00:00Z", "description": "<p>ignored</p>"},
+    {"id": "900002", "title": "Generally Available: New feature for Azure Database for PostgreSQL", "tags": ["Features"], "created": "2026-07-01T00:00:00Z", "modified": "2026-07-01T00:00:00Z"},
+    {"id": "900004", "title": "Retirement: Some unrelated storage service", "tags": ["Retirements"], "created": "2026-04-01T00:00:00Z", "modified": "2026-04-01T00:00:00Z"},
+    {"id": "900005", "title": "Update: End of standard support for Example POSTGRES 14 moves", "tags": ["Updates"], "created": "2026-06-01T00:00:00Z"},
+    {"id": "900006", "title": "Deprecation of an old API for Example mysql servers", "tags": [], "created": null},
+    {"id": "900007", "title": "Example Azure Database for MySQL 5.6 reaches end of support", "tags": [], "created": "2026-02-01T00:00:00Z", "modified": "2026-03-15T00:00:00Z"},
+    {"id": "900008", "title": "Example PostgreSQL 10 end of life notice", "tags": [], "created": "2026-01-10T00:00:00Z"}
+  ]
+}

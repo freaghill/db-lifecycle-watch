@@ -1,0 +1,6 @@
+## Supported MySQL major versions on Amazon RDS
+
+MySQL major version | Community release date | RDS release date | Community end of life date | RDS end of standard support date | RDS start of Extended Support year 1 pricing date | RDS start of Extended Support year 3 pricing date | RDS end of Extended Support date
+MySQL 8.4 | 30 April 2024 | 21 November 2024 | 30 April 2029 | 31 July 2029 | 1 August, 2029 | 1 August 2031 | 31 July 2032
+MySQL 8.0\* | 19 April 2018 | 23 October 2018 | 30 April 2026 | 31 July 2026 | 1 August 2026 | 1 August 2028 | 31 July 2029
+MySQL 5.7\* | 21 October 2015 | 22 February 2016 | 31 October 2023 | 29 February 2024 | 1 March 2024 | 1 March 2026 | 30 June 2029

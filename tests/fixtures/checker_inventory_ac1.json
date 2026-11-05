@@ -1,0 +1,58 @@
+{
+  "count": 3,
+  "total_records": 3,
+  "skip_token": null,
+  "data": [
+    {
+      "id": "/subscriptions/00000000-0000-0000-0000-000000000001/resourceGroups/rg-demo/providers/microsoft.dbforpostgresql/flexibleservers/pg-demo-1",
+      "name": "pg-demo-1",
+      "type": "microsoft.dbforpostgresql/flexibleservers",
+      "resourceGroup": "rg-demo",
+      "subscriptionId": "00000000-0000-0000-0000-000000000001",
+      "tenantId": "00000000-0000-0000-0000-00000000000a",
+      "location": "eastus",
+      "skuName": "Standard_D4ds_v5",
+      "skuTier": "GeneralPurpose",
+      "version": "13",
+      "minorVersion": "",
+      "fullVersion": "",
+      "haMode": "ZoneRedundant",
+      "replicationRole": "None",
+      "state": "Ready"
+    },
+    {
+      "id": "/subscriptions/00000000-0000-0000-0000-000000000001/resourceGroups/rg-demo/providers/microsoft.dbformysql/flexibleservers/mysql-demo-1",
+      "name": "mysql-demo-1",
+      "type": "microsoft.dbformysql/flexibleservers",
+      "resourceGroup": "rg-demo",
+      "subscriptionId": "00000000-0000-0000-0000-000000000001",
+      "tenantId": "00000000-0000-0000-0000-00000000000a",
+      "location": "westeurope",
+      "skuName": "Standard_B2s",
+      "skuTier": "Burstable",
+      "version": "8.0.21",
+      "minorVersion": "",
+      "fullVersion": "",
+      "haMode": "Disabled",
+      "replicationRole": "None",
+      "state": "Ready"
+    },
+    {
+      "id": "/subscriptions/00000000-0000-0000-0000-000000000001/resourceGroups/rg-demo/providers/microsoft.dbforpostgresql/flexibleservers/pg-demo-2",
+      "name": "pg-demo-2",
+      "type": "microsoft.dbforpostgresql/flexibleservers",
+      "resourceGroup": "rg-demo",
+      "subscriptionId": "00000000-0000-0000-0000-000000000001",
+      "tenantId": "00000000-0000-0000-0000-00000000000a",
+      "location": "eastus",
+      "skuName": "Standard_D2ds_v5",
+      "skuTier": "GeneralPurpose",
+      "version": "16",
+      "minorVersion": "",
+      "fullVersion": "",
+      "haMode": "Disabled",
+      "replicationRole": "None",
+      "state": "Ready"
+    }
+  ]
+}

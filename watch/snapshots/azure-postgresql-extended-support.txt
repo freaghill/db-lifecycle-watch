@@ -1,0 +1,10 @@
+## Eligible PostgreSQL versions
+
+PostgreSQL Version | Azure Standard Support Start Date | Community Retirement Date | Azure Standard Support End Date | Extended Support Start Date | Extended Support End Date
+11 | July 24, 2019 | November 9, 2023 | July 31, 2026 | August 1, 2026 | March 31, 2027
+12 | September 22, 2020 | November 14, 2024 | July 31, 2026 | August 1, 2026 | November 13, 2027
+13 | May 25, 2021 | November 13, 2025 | July 31, 2026 | August 1, 2026 | November 12, 2028
+14 | June 29, 2022 | November 12, 2026 | January 31, 2027 | February 1, 2027 | November 11, 2029
+
+## Enrollment and price
+text-sha256: 7dbb8065def930494bf8e8cf5e6aab543d3b311594daa2733314972f7dd56bbe

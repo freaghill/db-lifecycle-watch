@@ -1,0 +1,49 @@
+[
+  {
+    "count": 1,
+    "total_records": 2,
+    "skip_token": "token-page-2",
+    "data": [
+      {
+        "id": "/subscriptions/00000000-0000-0000-0000-000000000001/resourceGroups/rg-demo/providers/microsoft.dbforpostgresql/flexibleservers/pg-demo-1",
+        "name": "pg-demo-1",
+        "type": "microsoft.dbforpostgresql/flexibleservers",
+        "resourceGroup": "rg-demo",
+        "subscriptionId": "00000000-0000-0000-0000-000000000001",
+        "tenantId": "00000000-0000-0000-0000-00000000000a",
+        "location": "eastus",
+        "skuName": "Standard_D4ds_v5",
+        "skuTier": "GeneralPurpose",
+        "version": "13",
+        "minorVersion": "",
+        "fullVersion": "",
+        "haMode": "Disabled",
+        "replicationRole": "None",
+        "state": "Ready"
+      }
+    ]
+  },
+  {
+    "count": 1,
+    "total_records": 2,
+    "data": [
+      {
+        "id": "/subscriptions/00000000-0000-0000-0000-000000000001/resourceGroups/rg-demo/providers/microsoft.dbforpostgresql/flexibleservers/pg-demo-3",
+        "name": "pg-demo-3",
+        "type": "microsoft.dbforpostgresql/flexibleservers",
+        "resourceGroup": "rg-demo",
+        "subscriptionId": "00000000-0000-0000-0000-000000000001",
+        "tenantId": "00000000-0000-0000-0000-00000000000a",
+        "location": "eastus",
+        "skuName": "Standard_D2ds_v5",
+        "skuTier": "GeneralPurpose",
+        "version": "12",
+        "minorVersion": "",
+        "fullVersion": "",
+        "haMode": "Disabled",
+        "replicationRole": "None",
+        "state": "Ready"
+      }
+    ]
+  }
+]

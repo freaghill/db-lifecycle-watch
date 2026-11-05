@@ -1,0 +1,2 @@
+## Amazon RDS Extended Support charges
+text-sha256: c1dfb69b785d52248ad5faa15ec0e1531c2e7cc90e72ad9ef19ab8f54abe1956

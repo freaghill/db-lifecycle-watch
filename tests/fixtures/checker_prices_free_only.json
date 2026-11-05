@@ -1,0 +1,39 @@
+{
+  "BillingCurrency": "USD",
+  "NextPageLink": null,
+  "Items": [
+    {
+      "armRegionName": "eastus",
+      "productName": "Azure Database for Postgres Extended Support",
+      "meterName": "Extd Spprt Free Tier vCore",
+      "skuName": "Extd Spprt Free Tier",
+      "retailPrice": 0.0,
+      "currencyCode": "USD",
+      "type": "Consumption",
+      "unitOfMeasure": "1 Hour",
+      "effectiveStartDate": "2026-09-01T00:00:00Z"
+    },
+    {
+      "armRegionName": "eastus",
+      "productName": "Azure Database for Postgres Extended Support",
+      "meterName": "Extended Support vCore",
+      "skuName": "Extended Support",
+      "retailPrice": 0.0,
+      "currencyCode": "USD",
+      "type": "Consumption",
+      "unitOfMeasure": "1 Hour",
+      "effectiveStartDate": "2026-09-01T00:00:00Z"
+    },
+    {
+      "armRegionName": "eastus",
+      "productName": "Azure Database for Postgres Extended Support",
+      "meterName": "Extd Spprt Free Tier vCore",
+      "skuName": "Extd Spprt Free Tier",
+      "retailPrice": 0.05,
+      "currencyCode": "USD",
+      "type": "Consumption",
+      "unitOfMeasure": "1 Hour",
+      "effectiveStartDate": "2026-09-01T00:00:00Z"
+    }
+  ]
+}

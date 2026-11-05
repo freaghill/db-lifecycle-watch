@@ -1,0 +1,8 @@
+## Major version retirement policy
+
+Version | What's New | Azure Support Start Date | Community Retirement Date | Azure Standard Support End Date | Azure Extended Support Start Date | Azure Extended Support End Date
+MySQL 5.7 | Features | March 20, 2018 | October 31, 2023 | September 30, 2026 | October 1, 2026 | March 31, 2029
+MySQL 8.0 | Features | December 11, 2019 | April 30, 2026 | January 31, 2027 | February 1, 2027 | May 31, 2029
+
+## What happens after standard support ends?
+text-sha256: d2b861bb66a33c73a65435e182b53954fde15557053508a44c0e7ce3f0d460ac

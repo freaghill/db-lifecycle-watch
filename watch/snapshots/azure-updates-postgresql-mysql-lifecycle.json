@@ -1,0 +1,50 @@
+[
+  {
+    "date": "2025-09-10",
+    "id": "501994",
+    "link": "https://azure.microsoft.com/updates?id=501994",
+    "title": "Generally Available: Azure MySQL Extended Support"
+  },
+  {
+    "date": "2026-03-30",
+    "id": "556085",
+    "link": "https://azure.microsoft.com/updates?id=556085",
+    "title": "Retirement: Azure Cosmos DB for PostgreSQL will retire on March 31, 2029"
+  },
+  {
+    "date": "2026-08-24",
+    "id": "569526",
+    "link": "https://azure.microsoft.com/updates?id=569526",
+    "title": "Announcing: Extended Support for Azure Database for PostgreSQL Flexible Server"
+  },
+  {
+    "date": "2023-09-22",
+    "id": "azure-database-for-mariadb-will-be-retired-on-19-september-2025-migrate-to-azure-database-for-mysql-flexible-server",
+    "link": "https://azure.microsoft.com/updates?id=azure-database-for-mariadb-will-be-retired-on-19-september-2025-migrate-to-azure-database-for-mysql-flexible-server",
+    "title": "Azure Database for MariaDB will be retired on 19 September 2025 – Migrate to Azure Database for MySQL Flexible Server"
+  },
+  {
+    "date": "2023-03-31",
+    "id": "azure-database-for-postgresql-single-server-will-be-retired-migrate-to-flexible-server-by-28-march-2025",
+    "link": "https://azure.microsoft.com/updates?id=azure-database-for-postgresql-single-server-will-be-retired-migrate-to-flexible-server-by-28-march-2025",
+    "title": "Azure Database for PostgreSQL Single Server will be retired—migrate to Flexible Server by 28 March 2025"
+  },
+  {
+    "date": "2024-11-22",
+    "id": "azure-postgresql-migration-extension-in-azure-data-studio-1",
+    "link": "https://azure.microsoft.com/updates?id=azure-postgresql-migration-extension-in-azure-data-studio-1",
+    "title": "Retirement: Azure PostgreSQL migration extension in Azure Data Studio (ADS)"
+  },
+  {
+    "date": "2018-10-04",
+    "id": "mysql-preview-api-deprecation",
+    "link": "https://azure.microsoft.com/updates?id=mysql-preview-api-deprecation",
+    "title": "Deprecation of preview API versions for Azure Database for MySQL"
+  },
+  {
+    "date": "2018-10-04",
+    "id": "postgresql-preview-api-deprecation",
+    "link": "https://azure.microsoft.com/updates?id=postgresql-preview-api-deprecation",
+    "title": "Deprecation of preview API versions for Azure Database for PostgreSQL"
+  }
+]

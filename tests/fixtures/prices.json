@@ -1,0 +1,19 @@
+{
+  "BillingCurrency": "USD",
+  "NextPageLink": null,
+  "Count": 12,
+  "Items": [
+    {"armRegionName": "westeurope", "productName": "Azure Database for Postgres Extended Support", "meterName": "Extended Support vCore", "skuName": "Extended Support", "retailPrice": 0.09, "currencyCode": "USD", "type": "Consumption", "unitOfMeasure": "1 Hour", "effectiveStartDate": "2025-11-01T00:00:00Z"},
+    {"armRegionName": "eastus", "productName": "Azure Database for Postgres Extended Support", "meterName": "Extd Spprt Free Tier", "skuName": "Extd Spprt Free Tier", "retailPrice": 0.0, "currencyCode": "USD", "type": "Consumption", "unitOfMeasure": "1 Hour", "effectiveStartDate": "2025-11-01T00:00:00Z"},
+    {"armRegionName": "eastus", "productName": "Azure Database for Postgres Extended Support", "meterName": "Extended Support vCore", "skuName": "Extended Support", "retailPrice": 0.07, "currencyCode": "USD", "type": "Consumption", "unitOfMeasure": "1 Hour", "effectiveStartDate": "2025-11-01T00:00:00Z"},
+    {"armRegionName": "eastus", "productName": "Azure Database for MySQL Extended Support", "meterName": "Extd Spprt Free Tier vCore", "skuName": "Extd Spprt Free Tier", "retailPrice": 0.0, "currencyCode": "USD", "type": "Consumption", "unitOfMeasure": "1 Hour", "effectiveStartDate": "2025-11-01T00:00:00Z"},
+    {"armRegionName": "eastus", "productName": "Azure Database for MySQL Extended Support", "meterName": "Extended Support vCore", "skuName": "Extended Support", "retailPrice": 0.07, "currencyCode": "USD", "type": "Consumption", "unitOfMeasure": "1 Hour", "effectiveStartDate": "2025-11-01T00:00:00Z"},
+    {"armRegionName": "brazilsoutheast", "productName": "Azure Database for MySQL Extended Support", "meterName": "Extended Support vCore", "skuName": "Extended Support", "retailPrice": 0.18, "currencyCode": "USD", "type": "Consumption", "unitOfMeasure": "1 Hour", "effectiveStartDate": "2025-11-01T00:00:00Z"},
+    {"armRegionName": "eastus", "productName": "Some Other Product", "meterName": "Extended Support vCore", "skuName": "Extended Support", "retailPrice": 9.99, "currencyCode": "USD", "type": "Consumption", "unitOfMeasure": "1 Hour", "effectiveStartDate": "2025-11-01T00:00:00Z"},
+    {"armRegionName": "eastus", "productName": "Azure Database for MySQL Extended Support", "meterName": "Extended Support Year 3 vCore", "skuName": "Extended Support", "retailPrice": 0.14, "currencyCode": "USD", "type": "Consumption", "unitOfMeasure": "1 Hour", "effectiveStartDate": "2028-10-01T00:00:00Z"},
+    {"armRegionName": "brazilsoutheast", "productName": "Azure Database for MySQL Extended Support", "meterName": "Extended Support vCore", "skuName": "Extended Support", "retailPrice": 0.18, "currencyCode": "USD", "type": "Consumption", "unitOfMeasure": "1 Hour", "effectiveStartDate": "2026-06-01T00:00:00Z"},
+    {"armRegionName": "reservationregion", "productName": "Azure Database for Postgres Extended Support", "meterName": "Extended Support vCore", "skuName": "Extended Support", "retailPrice": 0.05, "currencyCode": "USD", "type": "Reservation", "unitOfMeasure": "1 Hour", "effectiveStartDate": "2025-11-01T00:00:00Z"},
+    {"armRegionName": "eurregion", "productName": "Azure Database for Postgres Extended Support", "meterName": "Extended Support vCore", "skuName": "Extended Support", "retailPrice": 0.06, "currencyCode": "EUR", "type": "Consumption", "unitOfMeasure": "1 Hour", "effectiveStartDate": "2025-11-01T00:00:00Z"},
+    {"armRegionName": "zeroregion", "productName": "Azure Database for Postgres Extended Support", "meterName": "Extended Support vCore", "skuName": "Extended Support", "retailPrice": 0.0, "currencyCode": "USD", "type": "Consumption", "unitOfMeasure": "1 Hour", "effectiveStartDate": "2025-11-01T00:00:00Z"}
+  ]
+}

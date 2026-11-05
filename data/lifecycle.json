@@ -1,0 +1,847 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "azure-postgresql-flexible-11",
+      "cloud": "azure",
+      "service": "azure-database-for-postgresql-flexible",
+      "engine": "postgresql",
+      "major_version": "11",
+      "standard_support_end": "2026-07-31",
+      "extended_support_start": "2026-08-01",
+      "extended_support_billing_start": "2026-09-01",
+      "extended_support_price_steps": [
+        {
+          "from": "2026-09-01",
+          "price_per_unit_hour": 0.07,
+          "unit": "vCore",
+          "currency": "USD",
+          "region_reference": "eastus"
+        }
+      ],
+      "extended_support_end": "2027-03-31",
+      "after_extended_support": "not documented",
+      "auto_enrolled": true,
+      "opt_out": "none; upgrading to a supported version is the only way out",
+      "billing_notes": "Billed per vCore-hour only while the server is running; stopped, deleted or failed servers are not billed. HA standby and read replica billing not documented. If regional capacity limits block an upgrade to a supported version, the server may be left out of extended support billing until an upgrade path is available (extended support page FAQ).",
+      "sources": [
+        {
+          "url": "https://learn.microsoft.com/en-us/azure/postgresql/configure-maintain/concepts-version-policy",
+          "title": "Azure Database for PostgreSQL version policy",
+          "what": "standard support end dates"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/azure/postgresql/configure-maintain/extended-support",
+          "title": "Azure Database for PostgreSQL flexible server extended support",
+          "what": "extended support dates, enrollment, grace period, billing of stopped servers"
+        },
+        {
+          "url": "https://prices.azure.com/api/retail/prices?$filter=productName%20eq%20%27Azure%20Database%20for%20Postgres%20Extended%20Support%27",
+          "title": "Azure Retail Prices API, PostgreSQL extended support",
+          "what": "Extended Support vCore price per region"
+        },
+        {
+          "url": "https://azure.microsoft.com/en-us/pricing/details/postgresql/flexible-server/",
+          "title": "Azure Database for PostgreSQL flexible server pricing",
+          "what": "year 3 is charged at twice the year 1 and 2 rate"
+        }
+      ],
+      "verified_on": "2026-11-04",
+      "notes": "One-month grace period: in extended support from 2026-08-01, billed from 2026-09-01. East US price; other regions range from 0.07 to 0.161 USD per vCore-hour (Retail Prices API)."
+    },
+    {
+      "id": "azure-postgresql-flexible-12",
+      "cloud": "azure",
+      "service": "azure-database-for-postgresql-flexible",
+      "engine": "postgresql",
+      "major_version": "12",
+      "standard_support_end": "2026-07-31",
+      "extended_support_start": "2026-08-01",
+      "extended_support_billing_start": "2026-09-01",
+      "extended_support_price_steps": [
+        {
+          "from": "2026-09-01",
+          "price_per_unit_hour": 0.07,
+          "unit": "vCore",
+          "currency": "USD",
+          "region_reference": "eastus"
+        }
+      ],
+      "extended_support_end": "2027-11-13",
+      "after_extended_support": "not documented",
+      "auto_enrolled": true,
+      "opt_out": "none; upgrading to a supported version is the only way out",
+      "billing_notes": "Billed per vCore-hour only while the server is running; stopped, deleted or failed servers are not billed. HA standby and read replica billing not documented. If regional capacity limits block an upgrade to a supported version, the server may be left out of extended support billing until an upgrade path is available (extended support page FAQ).",
+      "sources": [
+        {
+          "url": "https://learn.microsoft.com/en-us/azure/postgresql/configure-maintain/concepts-version-policy",
+          "title": "Azure Database for PostgreSQL version policy",
+          "what": "standard support end dates"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/azure/postgresql/configure-maintain/extended-support",
+          "title": "Azure Database for PostgreSQL flexible server extended support",
+          "what": "extended support dates, enrollment, grace period, billing of stopped servers"
+        },
+        {
+          "url": "https://prices.azure.com/api/retail/prices?$filter=productName%20eq%20%27Azure%20Database%20for%20Postgres%20Extended%20Support%27",
+          "title": "Azure Retail Prices API, PostgreSQL extended support",
+          "what": "Extended Support vCore price per region"
+        },
+        {
+          "url": "https://azure.microsoft.com/en-us/pricing/details/postgresql/flexible-server/",
+          "title": "Azure Database for PostgreSQL flexible server pricing",
+          "what": "year 3 is charged at twice the year 1 and 2 rate"
+        }
+      ],
+      "verified_on": "2026-11-04",
+      "notes": "One-month grace period: in extended support from 2026-08-01, billed from 2026-09-01. East US price; other regions range from 0.07 to 0.161 USD per vCore-hour (Retail Prices API)."
+    },
+    {
+      "id": "azure-postgresql-flexible-13",
+      "cloud": "azure",
+      "service": "azure-database-for-postgresql-flexible",
+      "engine": "postgresql",
+      "major_version": "13",
+      "standard_support_end": "2026-07-31",
+      "extended_support_start": "2026-08-01",
+      "extended_support_billing_start": "2026-09-01",
+      "extended_support_price_steps": [
+        {
+          "from": "2026-09-01",
+          "price_per_unit_hour": 0.07,
+          "unit": "vCore",
+          "currency": "USD",
+          "region_reference": "eastus"
+        }
+      ],
+      "extended_support_end": "2028-11-12",
+      "after_extended_support": "not documented",
+      "auto_enrolled": true,
+      "opt_out": "none; upgrading to a supported version is the only way out",
+      "billing_notes": "Billed per vCore-hour only while the server is running; stopped, deleted or failed servers are not billed. HA standby and read replica billing not documented. If regional capacity limits block an upgrade to a supported version, the server may be left out of extended support billing until an upgrade path is available (extended support page FAQ).",
+      "sources": [
+        {
+          "url": "https://learn.microsoft.com/en-us/azure/postgresql/configure-maintain/concepts-version-policy",
+          "title": "Azure Database for PostgreSQL version policy",
+          "what": "standard support end dates"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/azure/postgresql/configure-maintain/extended-support",
+          "title": "Azure Database for PostgreSQL flexible server extended support",
+          "what": "extended support dates, enrollment, grace period, billing of stopped servers"
+        },
+        {
+          "url": "https://prices.azure.com/api/retail/prices?$filter=productName%20eq%20%27Azure%20Database%20for%20Postgres%20Extended%20Support%27",
+          "title": "Azure Retail Prices API, PostgreSQL extended support",
+          "what": "Extended Support vCore price per region"
+        },
+        {
+          "url": "https://azure.microsoft.com/en-us/pricing/details/postgresql/flexible-server/",
+          "title": "Azure Database for PostgreSQL flexible server pricing",
+          "what": "year 3 is charged at twice the year 1 and 2 rate"
+        }
+      ],
+      "verified_on": "2026-11-04",
+      "notes": "One-month grace period: in extended support from 2026-08-01, billed from 2026-09-01. Year 3 rule (Azure PostgreSQL flexible server pricing page): from the third year of extended support the rate is twice the year 1 and 2 rate. No year 3 date or meter is published, so no year 3 step is listed. East US price; other regions range from 0.07 to 0.161 USD per vCore-hour (Retail Prices API)."
+    },
+    {
+      "id": "azure-postgresql-flexible-14",
+      "cloud": "azure",
+      "service": "azure-database-for-postgresql-flexible",
+      "engine": "postgresql",
+      "major_version": "14",
+      "standard_support_end": "2027-01-31",
+      "extended_support_start": "2027-02-01",
+      "extended_support_billing_start": null,
+      "extended_support_price_steps": [],
+      "extended_support_end": "2029-11-11",
+      "after_extended_support": "not documented",
+      "auto_enrolled": true,
+      "opt_out": "none; upgrading to a supported version is the only way out",
+      "billing_notes": "Billed per vCore-hour only while the server is running; stopped, deleted or failed servers are not billed. HA standby and read replica billing not documented. If regional capacity limits block an upgrade to a supported version, the server may be left out of extended support billing until an upgrade path is available (extended support page FAQ).",
+      "sources": [
+        {
+          "url": "https://learn.microsoft.com/en-us/azure/postgresql/configure-maintain/concepts-version-policy",
+          "title": "Azure Database for PostgreSQL version policy",
+          "what": "standard support end dates"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/azure/postgresql/configure-maintain/extended-support",
+          "title": "Azure Database for PostgreSQL flexible server extended support",
+          "what": "extended support dates, enrollment, grace period, billing of stopped servers"
+        },
+        {
+          "url": "https://prices.azure.com/api/retail/prices?$filter=productName%20eq%20%27Azure%20Database%20for%20Postgres%20Extended%20Support%27",
+          "title": "Azure Retail Prices API, PostgreSQL extended support",
+          "what": "Extended Support vCore price per region"
+        },
+        {
+          "url": "https://azure.microsoft.com/en-us/pricing/details/postgresql/flexible-server/",
+          "title": "Azure Database for PostgreSQL flexible server pricing",
+          "what": "year 3 is charged at twice the year 1 and 2 rate"
+        }
+      ],
+      "verified_on": "2026-11-04",
+      "notes": "The extended support page gives the one-month grace period only for versions 11, 12 and 13 and does not state when billing starts for 14, so billing start is unknown and no price step is listed. Rate when billed: 0.07 USD per vCore-hour in East US (Retail Prices API); other regions range from 0.07 to 0.161. Year 3 rule (Azure PostgreSQL flexible server pricing page): from the third year of extended support the rate is twice the year 1 and 2 rate. No year 3 date or meter is published, so no year 3 step is listed."
+    },
+    {
+      "id": "azure-postgresql-flexible-15",
+      "cloud": "azure",
+      "service": "azure-database-for-postgresql-flexible",
+      "engine": "postgresql",
+      "major_version": "15",
+      "standard_support_end": "2027-11-11",
+      "extended_support_start": null,
+      "extended_support_billing_start": null,
+      "extended_support_price_steps": [],
+      "extended_support_end": null,
+      "after_extended_support": "not documented",
+      "auto_enrolled": null,
+      "opt_out": "not documented",
+      "billing_notes": "not documented",
+      "sources": [
+        {
+          "url": "https://learn.microsoft.com/en-us/azure/postgresql/configure-maintain/concepts-version-policy",
+          "title": "Azure Database for PostgreSQL version policy",
+          "what": "standard support end dates"
+        }
+      ],
+      "verified_on": "2026-11-04",
+      "notes": "Extended support dates for this version are not published yet."
+    },
+    {
+      "id": "azure-postgresql-flexible-16",
+      "cloud": "azure",
+      "service": "azure-database-for-postgresql-flexible",
+      "engine": "postgresql",
+      "major_version": "16",
+      "standard_support_end": "2028-11-09",
+      "extended_support_start": null,
+      "extended_support_billing_start": null,
+      "extended_support_price_steps": [],
+      "extended_support_end": null,
+      "after_extended_support": "not documented",
+      "auto_enrolled": null,
+      "opt_out": "not documented",
+      "billing_notes": "not documented",
+      "sources": [
+        {
+          "url": "https://learn.microsoft.com/en-us/azure/postgresql/configure-maintain/concepts-version-policy",
+          "title": "Azure Database for PostgreSQL version policy",
+          "what": "standard support end dates"
+        }
+      ],
+      "verified_on": "2026-11-04",
+      "notes": "Extended support dates for this version are not published yet."
+    },
+    {
+      "id": "azure-postgresql-flexible-17",
+      "cloud": "azure",
+      "service": "azure-database-for-postgresql-flexible",
+      "engine": "postgresql",
+      "major_version": "17",
+      "standard_support_end": "2029-11-08",
+      "extended_support_start": null,
+      "extended_support_billing_start": null,
+      "extended_support_price_steps": [],
+      "extended_support_end": null,
+      "after_extended_support": "not documented",
+      "auto_enrolled": null,
+      "opt_out": "not documented",
+      "billing_notes": "not documented",
+      "sources": [
+        {
+          "url": "https://learn.microsoft.com/en-us/azure/postgresql/configure-maintain/concepts-version-policy",
+          "title": "Azure Database for PostgreSQL version policy",
+          "what": "standard support end dates"
+        }
+      ],
+      "verified_on": "2026-11-04",
+      "notes": "Extended support dates for this version are not published yet."
+    },
+    {
+      "id": "azure-mysql-flexible-5.7",
+      "cloud": "azure",
+      "service": "azure-database-for-mysql-flexible",
+      "engine": "mysql",
+      "major_version": "5.7",
+      "standard_support_end": "2026-09-30",
+      "extended_support_start": "2026-10-01",
+      "extended_support_billing_start": "2026-10-01",
+      "extended_support_price_steps": [
+        {
+          "from": "2026-10-01",
+          "price_per_unit_hour": 0.07,
+          "unit": "vCore",
+          "currency": "USD",
+          "region_reference": "eastus"
+        }
+      ],
+      "extended_support_end": "2029-03-31",
+      "after_extended_support": "unsupported, no engine patches",
+      "auto_enrolled": true,
+      "opt_out": "none; upgrading to a version in standard support is the only way out",
+      "billing_notes": "Billed per vCore-hour; read replicas and HA servers are billed for their extra vCores; stopped servers are not billed.",
+      "sources": [
+        {
+          "url": "https://learn.microsoft.com/en-us/azure/mysql/concepts-version-policy",
+          "title": "Azure Database for MySQL version support policy",
+          "what": "standard and extended support dates, enrollment, billing rules"
+        },
+        {
+          "url": "https://prices.azure.com/api/retail/prices?$filter=productName%20eq%20%27Azure%20Database%20for%20MySQL%20Extended%20Support%27",
+          "title": "Azure Retail Prices API, MySQL extended support",
+          "what": "Extended Support vCore price per region"
+        },
+        {
+          "url": "https://azure.microsoft.com/en-us/pricing/details/mysql/",
+          "title": "Azure Database for MySQL flexible server pricing",
+          "what": "year 3 is charged at twice the year 1 and 2 rate"
+        }
+      ],
+      "verified_on": "2026-11-04",
+      "notes": "Year 3 rule (Azure MySQL flexible server pricing page): from the third year of extended support the rate is twice the year 1 and 2 rate. No year 3 date or meter is published, so no year 3 step is listed. The version policy page says servers are enrolled and charged automatically once in extended support, and its FAQ says billing starts after the Azure standard support end date. East US price; other regions range from 0.07 to 0.18 USD per vCore-hour (Retail Prices API). Microsoft has moved these dates before."
+    },
+    {
+      "id": "azure-mysql-flexible-8.0",
+      "cloud": "azure",
+      "service": "azure-database-for-mysql-flexible",
+      "engine": "mysql",
+      "major_version": "8.0",
+      "standard_support_end": "2027-01-31",
+      "extended_support_start": "2027-02-01",
+      "extended_support_billing_start": "2027-02-01",
+      "extended_support_price_steps": [
+        {
+          "from": "2027-02-01",
+          "price_per_unit_hour": 0.07,
+          "unit": "vCore",
+          "currency": "USD",
+          "region_reference": "eastus"
+        }
+      ],
+      "extended_support_end": "2029-05-31",
+      "after_extended_support": "unsupported, no engine patches",
+      "auto_enrolled": true,
+      "opt_out": "none; upgrading to a version in standard support is the only way out",
+      "billing_notes": "Billed per vCore-hour; read replicas and HA servers are billed for their extra vCores; stopped servers are not billed.",
+      "sources": [
+        {
+          "url": "https://learn.microsoft.com/en-us/azure/mysql/concepts-version-policy",
+          "title": "Azure Database for MySQL version support policy",
+          "what": "standard and extended support dates, enrollment, billing rules"
+        },
+        {
+          "url": "https://prices.azure.com/api/retail/prices?$filter=productName%20eq%20%27Azure%20Database%20for%20MySQL%20Extended%20Support%27",
+          "title": "Azure Retail Prices API, MySQL extended support",
+          "what": "Extended Support vCore price per region"
+        },
+        {
+          "url": "https://azure.microsoft.com/en-us/pricing/details/mysql/",
+          "title": "Azure Database for MySQL flexible server pricing",
+          "what": "year 3 is charged at twice the year 1 and 2 rate"
+        }
+      ],
+      "verified_on": "2026-11-04",
+      "notes": "Year 3 rule (Azure MySQL flexible server pricing page): from the third year of extended support the rate is twice the year 1 and 2 rate. No year 3 date or meter is published, so no year 3 step is listed. The version policy page says servers are enrolled and charged automatically once in extended support, and its FAQ says billing starts after the Azure standard support end date. East US price; other regions range from 0.07 to 0.18 USD per vCore-hour (Retail Prices API). Microsoft has moved these dates before."
+    },
+    {
+      "id": "azure-mysql-flexible-8.4",
+      "cloud": "azure",
+      "service": "azure-database-for-mysql-flexible",
+      "engine": "mysql",
+      "major_version": "8.4",
+      "standard_support_end": null,
+      "extended_support_start": null,
+      "extended_support_billing_start": null,
+      "extended_support_price_steps": [],
+      "extended_support_end": null,
+      "after_extended_support": "not documented",
+      "auto_enrolled": null,
+      "opt_out": "not documented",
+      "billing_notes": "not documented",
+      "sources": [
+        {
+          "url": "https://learn.microsoft.com/en-us/azure/mysql/concepts-version-policy",
+          "title": "Azure Database for MySQL version support policy",
+          "what": "standard and extended support dates, enrollment, billing rules"
+        }
+      ],
+      "verified_on": "2026-11-04",
+      "notes": "Supported version, but the retirement table does not list it yet, so all lifecycle dates are unknown."
+    },
+    {
+      "id": "aws-rds-postgresql-11",
+      "cloud": "aws",
+      "service": "rds-postgresql",
+      "engine": "postgresql",
+      "major_version": "11",
+      "standard_support_end": "2024-02-29",
+      "extended_support_start": "2024-03-01",
+      "extended_support_billing_start": "2024-04-01",
+      "extended_support_price_steps": [
+        {
+          "from": "2024-04-01",
+          "price_per_unit_hour": 0.1,
+          "unit": "vCPU",
+          "currency": "USD",
+          "region_reference": "us-east-1"
+        },
+        {
+          "from": "2026-04-01",
+          "price_per_unit_hour": 0.2,
+          "unit": "vCPU",
+          "currency": "USD",
+          "region_reference": "us-east-1"
+        }
+      ],
+      "extended_support_end": "2027-03-31",
+      "after_extended_support": "forced upgrade",
+      "auto_enrolled": true,
+      "opt_out": "Disable with the EngineLifecycleSupport setting at create, restore or later; disabling after end of standard support starts an automatic major version upgrade.",
+      "billing_notes": "Billed per vCPU-hour; Multi-AZ standby instances are billed too. Read replica billing is not stated on the charges page.",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/PostgreSQLReleaseNotes/postgresql-release-calendar.html",
+          "title": "Release calendars for Amazon RDS for PostgreSQL",
+          "what": "end of standard support, year 1 and year 3 pricing start, end of extended support"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html",
+          "title": "Amazon RDS Extended Support",
+          "what": "enrollment, opt-out and automatic upgrade rules"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support-charges.html",
+          "title": "Amazon RDS Extended Support charges",
+          "what": "charge start, Multi-AZ standby billing"
+        },
+        {
+          "url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonRDS/current/us-east-1/index.csv",
+          "title": "AWS Price List API, Amazon RDS us-east-1",
+          "what": "Extended Support vCPU-hour price per version and pricing year"
+        }
+      ],
+      "verified_on": "2026-11-04",
+      "notes": "In extended support from 2024-03-01, charged from 2024-04-01."
+    },
+    {
+      "id": "aws-rds-postgresql-12",
+      "cloud": "aws",
+      "service": "rds-postgresql",
+      "engine": "postgresql",
+      "major_version": "12",
+      "standard_support_end": "2025-02-28",
+      "extended_support_start": "2025-03-01",
+      "extended_support_billing_start": "2025-03-01",
+      "extended_support_price_steps": [
+        {
+          "from": "2025-03-01",
+          "price_per_unit_hour": 0.1,
+          "unit": "vCPU",
+          "currency": "USD",
+          "region_reference": "us-east-1"
+        },
+        {
+          "from": "2027-03-01",
+          "price_per_unit_hour": 0.2,
+          "unit": "vCPU",
+          "currency": "USD",
+          "region_reference": "us-east-1"
+        }
+      ],
+      "extended_support_end": "2028-02-29",
+      "after_extended_support": "forced upgrade",
+      "auto_enrolled": true,
+      "opt_out": "Disable with the EngineLifecycleSupport setting at create, restore or later; disabling after end of standard support starts an automatic major version upgrade.",
+      "billing_notes": "Billed per vCPU-hour; Multi-AZ standby instances are billed too. Read replica billing is not stated on the charges page.",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/PostgreSQLReleaseNotes/postgresql-release-calendar.html",
+          "title": "Release calendars for Amazon RDS for PostgreSQL",
+          "what": "end of standard support, year 1 and year 3 pricing start, end of extended support"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html",
+          "title": "Amazon RDS Extended Support",
+          "what": "enrollment, opt-out and automatic upgrade rules"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support-charges.html",
+          "title": "Amazon RDS Extended Support charges",
+          "what": "charge start, Multi-AZ standby billing"
+        },
+        {
+          "url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonRDS/current/us-east-1/index.csv",
+          "title": "AWS Price List API, Amazon RDS us-east-1",
+          "what": "Extended Support vCPU-hour price per version and pricing year"
+        }
+      ],
+      "verified_on": "2026-11-04"
+    },
+    {
+      "id": "aws-rds-postgresql-13",
+      "cloud": "aws",
+      "service": "rds-postgresql",
+      "engine": "postgresql",
+      "major_version": "13",
+      "standard_support_end": "2026-02-28",
+      "extended_support_start": "2026-03-01",
+      "extended_support_billing_start": "2026-03-01",
+      "extended_support_price_steps": [
+        {
+          "from": "2026-03-01",
+          "price_per_unit_hour": 0.1,
+          "unit": "vCPU",
+          "currency": "USD",
+          "region_reference": "us-east-1"
+        },
+        {
+          "from": "2028-03-01",
+          "price_per_unit_hour": 0.2,
+          "unit": "vCPU",
+          "currency": "USD",
+          "region_reference": "us-east-1"
+        }
+      ],
+      "extended_support_end": "2029-02-28",
+      "after_extended_support": "forced upgrade",
+      "auto_enrolled": true,
+      "opt_out": "Disable with the EngineLifecycleSupport setting at create, restore or later; disabling after end of standard support starts an automatic major version upgrade.",
+      "billing_notes": "Billed per vCPU-hour; Multi-AZ standby instances are billed too. Read replica billing is not stated on the charges page.",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/PostgreSQLReleaseNotes/postgresql-release-calendar.html",
+          "title": "Release calendars for Amazon RDS for PostgreSQL",
+          "what": "end of standard support, year 1 and year 3 pricing start, end of extended support"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html",
+          "title": "Amazon RDS Extended Support",
+          "what": "enrollment, opt-out and automatic upgrade rules"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support-charges.html",
+          "title": "Amazon RDS Extended Support charges",
+          "what": "charge start, Multi-AZ standby billing"
+        },
+        {
+          "url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonRDS/current/us-east-1/index.csv",
+          "title": "AWS Price List API, Amazon RDS us-east-1",
+          "what": "Extended Support vCPU-hour price per version and pricing year"
+        }
+      ],
+      "verified_on": "2026-11-04"
+    },
+    {
+      "id": "aws-rds-postgresql-14",
+      "cloud": "aws",
+      "service": "rds-postgresql",
+      "engine": "postgresql",
+      "major_version": "14",
+      "standard_support_end": "2027-02-28",
+      "extended_support_start": "2027-03-01",
+      "extended_support_billing_start": "2027-03-01",
+      "extended_support_price_steps": [],
+      "extended_support_end": "2030-02-28",
+      "after_extended_support": "forced upgrade",
+      "auto_enrolled": true,
+      "opt_out": "Disable with the EngineLifecycleSupport setting at create, restore or later; disabling after end of standard support starts an automatic major version upgrade.",
+      "billing_notes": "Billed per vCPU-hour; Multi-AZ standby instances are billed too. Read replica billing is not stated on the charges page.",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/PostgreSQLReleaseNotes/postgresql-release-calendar.html",
+          "title": "Release calendars for Amazon RDS for PostgreSQL",
+          "what": "end of standard support, year 1 and year 3 pricing start, end of extended support"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html",
+          "title": "Amazon RDS Extended Support",
+          "what": "enrollment, opt-out and automatic upgrade rules"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support-charges.html",
+          "title": "Amazon RDS Extended Support charges",
+          "what": "charge start, Multi-AZ standby billing"
+        },
+        {
+          "url": "https://aws.amazon.com/rds/postgresql/pricing/",
+          "title": "Amazon RDS for PostgreSQL pricing",
+          "what": "Extended Support price depends on version; no general rate stated"
+        }
+      ],
+      "verified_on": "2026-11-04",
+      "notes": "The AWS Price List has no Extended Support price for this version yet, and the RDS for PostgreSQL pricing page says the price depends on the version and does not state a rate for all versions, so no price steps are listed. The calendar puts the year 3 pricing start at 2029-03-01."
+    },
+    {
+      "id": "aws-rds-postgresql-15",
+      "cloud": "aws",
+      "service": "rds-postgresql",
+      "engine": "postgresql",
+      "major_version": "15",
+      "standard_support_end": "2028-02-29",
+      "extended_support_start": "2028-03-01",
+      "extended_support_billing_start": "2028-03-01",
+      "extended_support_price_steps": [],
+      "extended_support_end": "2031-02-28",
+      "after_extended_support": "forced upgrade",
+      "auto_enrolled": true,
+      "opt_out": "Disable with the EngineLifecycleSupport setting at create, restore or later; disabling after end of standard support starts an automatic major version upgrade.",
+      "billing_notes": "Billed per vCPU-hour; Multi-AZ standby instances are billed too. Read replica billing is not stated on the charges page.",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/PostgreSQLReleaseNotes/postgresql-release-calendar.html",
+          "title": "Release calendars for Amazon RDS for PostgreSQL",
+          "what": "end of standard support, year 1 and year 3 pricing start, end of extended support"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html",
+          "title": "Amazon RDS Extended Support",
+          "what": "enrollment, opt-out and automatic upgrade rules"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support-charges.html",
+          "title": "Amazon RDS Extended Support charges",
+          "what": "charge start, Multi-AZ standby billing"
+        },
+        {
+          "url": "https://aws.amazon.com/rds/postgresql/pricing/",
+          "title": "Amazon RDS for PostgreSQL pricing",
+          "what": "Extended Support price depends on version; no general rate stated"
+        }
+      ],
+      "verified_on": "2026-11-04",
+      "notes": "The AWS Price List has no Extended Support price for this version yet, and the RDS for PostgreSQL pricing page says the price depends on the version and does not state a rate for all versions, so no price steps are listed. The calendar puts the year 3 pricing start at 2030-03-01."
+    },
+    {
+      "id": "aws-rds-postgresql-16",
+      "cloud": "aws",
+      "service": "rds-postgresql",
+      "engine": "postgresql",
+      "major_version": "16",
+      "standard_support_end": "2029-02-28",
+      "extended_support_start": "2029-03-01",
+      "extended_support_billing_start": "2029-03-01",
+      "extended_support_price_steps": [],
+      "extended_support_end": "2032-02-29",
+      "after_extended_support": "forced upgrade",
+      "auto_enrolled": true,
+      "opt_out": "Disable with the EngineLifecycleSupport setting at create, restore or later; disabling after end of standard support starts an automatic major version upgrade.",
+      "billing_notes": "Billed per vCPU-hour; Multi-AZ standby instances are billed too. Read replica billing is not stated on the charges page.",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/PostgreSQLReleaseNotes/postgresql-release-calendar.html",
+          "title": "Release calendars for Amazon RDS for PostgreSQL",
+          "what": "end of standard support, year 1 and year 3 pricing start, end of extended support"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html",
+          "title": "Amazon RDS Extended Support",
+          "what": "enrollment, opt-out and automatic upgrade rules"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support-charges.html",
+          "title": "Amazon RDS Extended Support charges",
+          "what": "charge start, Multi-AZ standby billing"
+        },
+        {
+          "url": "https://aws.amazon.com/rds/postgresql/pricing/",
+          "title": "Amazon RDS for PostgreSQL pricing",
+          "what": "Extended Support price depends on version; no general rate stated"
+        }
+      ],
+      "verified_on": "2026-11-04",
+      "notes": "The AWS Price List has no Extended Support price for this version yet, and the RDS for PostgreSQL pricing page says the price depends on the version and does not state a rate for all versions, so no price steps are listed. The calendar puts the year 3 pricing start at 2031-03-01."
+    },
+    {
+      "id": "aws-rds-postgresql-17",
+      "cloud": "aws",
+      "service": "rds-postgresql",
+      "engine": "postgresql",
+      "major_version": "17",
+      "standard_support_end": "2030-02-28",
+      "extended_support_start": "2030-03-01",
+      "extended_support_billing_start": "2030-03-01",
+      "extended_support_price_steps": [],
+      "extended_support_end": "2033-02-28",
+      "after_extended_support": "forced upgrade",
+      "auto_enrolled": true,
+      "opt_out": "Disable with the EngineLifecycleSupport setting at create, restore or later; disabling after end of standard support starts an automatic major version upgrade.",
+      "billing_notes": "Billed per vCPU-hour; Multi-AZ standby instances are billed too. Read replica billing is not stated on the charges page.",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/PostgreSQLReleaseNotes/postgresql-release-calendar.html",
+          "title": "Release calendars for Amazon RDS for PostgreSQL",
+          "what": "end of standard support, year 1 and year 3 pricing start, end of extended support"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html",
+          "title": "Amazon RDS Extended Support",
+          "what": "enrollment, opt-out and automatic upgrade rules"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support-charges.html",
+          "title": "Amazon RDS Extended Support charges",
+          "what": "charge start, Multi-AZ standby billing"
+        },
+        {
+          "url": "https://aws.amazon.com/rds/postgresql/pricing/",
+          "title": "Amazon RDS for PostgreSQL pricing",
+          "what": "Extended Support price depends on version; no general rate stated"
+        }
+      ],
+      "verified_on": "2026-11-04",
+      "notes": "The AWS Price List has no Extended Support price for this version yet, and the RDS for PostgreSQL pricing page says the price depends on the version and does not state a rate for all versions, so no price steps are listed. The calendar puts the year 3 pricing start at 2032-03-01."
+    },
+    {
+      "id": "aws-rds-mysql-5.7",
+      "cloud": "aws",
+      "service": "rds-mysql",
+      "engine": "mysql",
+      "major_version": "5.7",
+      "standard_support_end": "2024-02-29",
+      "extended_support_start": "2024-03-01",
+      "extended_support_billing_start": "2024-03-01",
+      "extended_support_price_steps": [
+        {
+          "from": "2024-03-01",
+          "price_per_unit_hour": 0.1,
+          "unit": "vCPU",
+          "currency": "USD",
+          "region_reference": "us-east-1"
+        },
+        {
+          "from": "2026-03-01",
+          "price_per_unit_hour": 0.2,
+          "unit": "vCPU",
+          "currency": "USD",
+          "region_reference": "us-east-1"
+        }
+      ],
+      "extended_support_end": "2029-06-30",
+      "after_extended_support": "forced upgrade",
+      "auto_enrolled": true,
+      "opt_out": "Disable with the EngineLifecycleSupport setting at create, restore or later; disabling after end of standard support starts an automatic major version upgrade.",
+      "billing_notes": "Billed per vCPU-hour; Multi-AZ standby instances are billed too. Read replica billing is not stated on the charges page.",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Concepts.VersionMgmt.html",
+          "title": "MySQL on Amazon RDS versions",
+          "what": "end of standard support, year 1 and year 3 pricing start, end of extended support"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html",
+          "title": "Amazon RDS Extended Support",
+          "what": "enrollment, opt-out and automatic upgrade rules"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support-charges.html",
+          "title": "Amazon RDS Extended Support charges",
+          "what": "charge start, Multi-AZ standby billing"
+        },
+        {
+          "url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonRDS/current/us-east-1/index.csv",
+          "title": "AWS Price List API, Amazon RDS us-east-1",
+          "what": "Extended Support vCPU-hour price per version and pricing year"
+        }
+      ],
+      "verified_on": "2026-11-04",
+      "notes": "Extended support ends more than three years after standard support; the year 3 rate applies until the end."
+    },
+    {
+      "id": "aws-rds-mysql-8.0",
+      "cloud": "aws",
+      "service": "rds-mysql",
+      "engine": "mysql",
+      "major_version": "8.0",
+      "standard_support_end": "2026-07-31",
+      "extended_support_start": "2026-08-01",
+      "extended_support_billing_start": "2026-08-01",
+      "extended_support_price_steps": [
+        {
+          "from": "2026-08-01",
+          "price_per_unit_hour": 0.1,
+          "unit": "vCPU",
+          "currency": "USD",
+          "region_reference": "us-east-1"
+        },
+        {
+          "from": "2028-08-01",
+          "price_per_unit_hour": 0.2,
+          "unit": "vCPU",
+          "currency": "USD",
+          "region_reference": "us-east-1"
+        }
+      ],
+      "extended_support_end": "2029-07-31",
+      "after_extended_support": "forced upgrade",
+      "auto_enrolled": true,
+      "opt_out": "Disable with the EngineLifecycleSupport setting at create, restore or later; disabling after end of standard support starts an automatic major version upgrade.",
+      "billing_notes": "Billed per vCPU-hour; Multi-AZ standby instances are billed too. Read replica billing is not stated on the charges page.",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Concepts.VersionMgmt.html",
+          "title": "MySQL on Amazon RDS versions",
+          "what": "end of standard support, year 1 and year 3 pricing start, end of extended support"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html",
+          "title": "Amazon RDS Extended Support",
+          "what": "enrollment, opt-out and automatic upgrade rules"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support-charges.html",
+          "title": "Amazon RDS Extended Support charges",
+          "what": "charge start, Multi-AZ standby billing"
+        },
+        {
+          "url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonRDS/current/us-east-1/index.csv",
+          "title": "AWS Price List API, Amazon RDS us-east-1",
+          "what": "Extended Support vCPU-hour price per version and pricing year"
+        }
+      ],
+      "verified_on": "2026-11-04"
+    },
+    {
+      "id": "aws-rds-mysql-8.4",
+      "cloud": "aws",
+      "service": "rds-mysql",
+      "engine": "mysql",
+      "major_version": "8.4",
+      "standard_support_end": "2029-07-31",
+      "extended_support_start": "2029-08-01",
+      "extended_support_billing_start": "2029-08-01",
+      "extended_support_price_steps": [],
+      "extended_support_end": "2032-07-31",
+      "after_extended_support": "forced upgrade",
+      "auto_enrolled": true,
+      "opt_out": "Disable with the EngineLifecycleSupport setting at create, restore or later; disabling after end of standard support starts an automatic major version upgrade.",
+      "billing_notes": "Billed per vCPU-hour; Multi-AZ standby instances are billed too. Read replica billing is not stated on the charges page.",
+      "sources": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Concepts.VersionMgmt.html",
+          "title": "MySQL on Amazon RDS versions",
+          "what": "end of standard support, year 1 and year 3 pricing start, end of extended support"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html",
+          "title": "Amazon RDS Extended Support",
+          "what": "enrollment, opt-out and automatic upgrade rules"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support-charges.html",
+          "title": "Amazon RDS Extended Support charges",
+          "what": "charge start, Multi-AZ standby billing"
+        },
+        {
+          "url": "https://aws.amazon.com/rds/mysql/pricing/",
+          "title": "Amazon RDS for MySQL pricing",
+          "what": "Extended Support price depends on version; no general rate stated"
+        }
+      ],
+      "verified_on": "2026-11-04",
+      "notes": "The AWS Price List has no Extended Support price for this version yet, and the RDS for MySQL pricing page says the price depends on the version and does not state a rate for all versions, so no price steps are listed. The calendar puts the year 3 pricing start at 2031-08-01."
+    }
+  ]
+}

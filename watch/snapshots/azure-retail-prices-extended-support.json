@@ -1,0 +1,816 @@
+{
+  "mysql": [
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1,
+      "region": "australiacentral"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1,
+      "region": "australiacentral2"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1,
+      "region": "australiaeast"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1,
+      "region": "australiasoutheast"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.091,
+      "region": "austriaeast"
+    },
+    {
+      "effective_start": "2026-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.091,
+      "region": "belgiumcentral"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.14,
+      "region": "brazilsouth"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.18,
+      "region": "brazilsoutheast"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.08,
+      "region": "canadacentral"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.08,
+      "region": "canadaeast"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1,
+      "region": "centralindia"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.09,
+      "region": "centralus"
+    },
+    {
+      "effective_start": "2026-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.098,
+      "region": "chilecentral"
+    },
+    {
+      "effective_start": "2026-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.091,
+      "region": "denmarkeast"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.11,
+      "region": "eastasia"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.07,
+      "region": "eastus"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.07,
+      "region": "eastus2"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.09,
+      "region": "francecentral"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.11,
+      "region": "francesouth"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.12,
+      "region": "germanynorth"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.09,
+      "region": "germanywestcentral"
+    },
+    {
+      "effective_start": "2026-05-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1,
+      "region": "indiasouthcentral"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.0819,
+      "region": "indonesiacentral"
+    },
+    {
+      "effective_start": "2026-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1001,
+      "region": "israelcentral"
+    },
+    {
+      "effective_start": "2026-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1001,
+      "region": "israelnorthwest"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.09,
+      "region": "italynorth"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1,
+      "region": "japaneast"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.11,
+      "region": "japanwest"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1,
+      "region": "jioindiawest"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.09,
+      "region": "koreacentral"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.09,
+      "region": "koreasouth"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.08,
+      "region": "malaysiawest"
+    },
+    {
+      "effective_start": "2026-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.077,
+      "region": "mexicocentral"
+    },
+    {
+      "effective_start": "2026-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1064,
+      "region": "newzealandnorth"
+    },
+    {
+      "effective_start": "2026-10-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.08,
+      "region": "northcentralus"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.08,
+      "region": "northeurope"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1,
+      "region": "norwayeast"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.13,
+      "region": "norwaywest"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1,
+      "region": "polandcentral"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1,
+      "region": "qatarcentral"
+    },
+    {
+      "effective_start": "2026-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1,
+      "region": "saudiarabiaeast"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1,
+      "region": "southafricanorth"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.13,
+      "region": "southafricawest"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.08,
+      "region": "southcentralus"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.09,
+      "region": "southeastasia"
+    },
+    {
+      "effective_start": "2026-10-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.08,
+      "region": "southeastasia3"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1,
+      "region": "southindia"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.091,
+      "region": "spaincentral"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.09,
+      "region": "swedencentral"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.13,
+      "region": "swedensouth"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1,
+      "region": "switzerlandnorth"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.13,
+      "region": "switzerlandwest"
+    },
+    {
+      "effective_start": "2026-10-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.09,
+      "region": "taiwannorth"
+    },
+    {
+      "effective_start": "2026-10-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.12,
+      "region": "taiwannorthwest"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.13,
+      "region": "uaecentral"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1,
+      "region": "uaenorth"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.09,
+      "region": "uksouth"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.09,
+      "region": "ukwest"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.09,
+      "region": "usgovarizona"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.09,
+      "region": "usgovtexas"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.09,
+      "region": "usgovvirginia"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.08,
+      "region": "westcentralus"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1001,
+      "region": "westeurope"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1,
+      "region": "westindia"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.09,
+      "region": "westus"
+    },
+    {
+      "effective_start": "2025-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.07,
+      "region": "westus2"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.07,
+      "region": "westus3"
+    }
+  ],
+  "postgresql": [
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1015,
+      "region": "australiacentral"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1015,
+      "region": "australiacentral2"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1015,
+      "region": "australiaeast"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.098,
+      "region": "australiasoutheast"
+    },
+    {
+      "effective_start": "2026-10-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.091,
+      "region": "austriaeast"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.091,
+      "region": "belgiumcentral"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.14,
+      "region": "brazilsouth"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.161,
+      "region": "brazilsoutheast"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.084,
+      "region": "canadacentral"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.084,
+      "region": "canadaeast"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.098,
+      "region": "centralindia"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.07,
+      "region": "centralus"
+    },
+    {
+      "effective_start": "2026-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.098,
+      "region": "chilecentral"
+    },
+    {
+      "effective_start": "2026-10-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.091,
+      "region": "denmarkeast"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1085,
+      "region": "eastasia"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.07,
+      "region": "eastus"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.07,
+      "region": "eastus2"
+    },
+    {
+      "effective_start": "2026-10-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.07,
+      "region": "eastus3"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.0875,
+      "region": "francecentral"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1141,
+      "region": "francesouth"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1183,
+      "region": "germanynorth"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.091,
+      "region": "germanywestcentral"
+    },
+    {
+      "effective_start": "2026-05-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.098,
+      "region": "indiasouthcentral"
+    },
+    {
+      "effective_start": "2026-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1001,
+      "region": "israelcentral"
+    },
+    {
+      "effective_start": "2026-10-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1001,
+      "region": "israelnorthwest"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.091,
+      "region": "italynorth"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1015,
+      "region": "japaneast"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1015,
+      "region": "japanwest"
+    },
+    {
+      "effective_start": "2026-11-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.098,
+      "region": "jioindiacentral"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.098,
+      "region": "jioindiawest"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.0945,
+      "region": "koreacentral"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.0875,
+      "region": "koreasouth"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.0819,
+      "region": "malaysiawest"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.077,
+      "region": "mexicocentral"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1064,
+      "region": "newzealandnorth"
+    },
+    {
+      "effective_start": "2026-10-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.084,
+      "region": "northcentralus"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1001,
+      "region": "northeurope"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1001,
+      "region": "norwayeast"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1302,
+      "region": "norwaywest"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.091,
+      "region": "polandcentral"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1001,
+      "region": "qatarcentral"
+    },
+    {
+      "effective_start": "2026-10-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1001,
+      "region": "saudiarabiaeast"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1022,
+      "region": "southafricanorth"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1274,
+      "region": "southafricawest"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.084,
+      "region": "southcentralus"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.098,
+      "region": "southeastasia"
+    },
+    {
+      "effective_start": "2026-10-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.0819,
+      "region": "southeastasia3"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1057,
+      "region": "southindia"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.091,
+      "region": "spaincentral"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.091,
+      "region": "swedencentral"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1183,
+      "region": "swedensouth"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1001,
+      "region": "switzerlandnorth"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1302,
+      "region": "switzerlandwest"
+    },
+    {
+      "effective_start": "2026-10-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.091,
+      "region": "taiwannorth"
+    },
+    {
+      "effective_start": "2026-10-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1183,
+      "region": "taiwannorthwest"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1302,
+      "region": "uaecentral"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1001,
+      "region": "uaenorth"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.0875,
+      "region": "uksouth"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.0917,
+      "region": "ukwest"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.0875,
+      "region": "usgovarizona"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.0875,
+      "region": "usgovtexas"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.0875,
+      "region": "usgovvirginia"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.084,
+      "region": "westcentralus"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.1001,
+      "region": "westeurope"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.0966,
+      "region": "westindia"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.091,
+      "region": "westus"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.07,
+      "region": "westus2"
+    },
+    {
+      "effective_start": "2026-03-01T00:00:00Z",
+      "meter": "Extended Support vCore",
+      "price": 0.07,
+      "region": "westus3"
+    }
+  ]
+}

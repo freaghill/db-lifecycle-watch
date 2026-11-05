@@ -1,0 +1,2 @@
+## Amazon RDS Extended Support with Amazon RDS
+text-sha256: 4fa1cf2ddf13bf6d327b704de7c5073e51ba417287335d7fd9344fb7e8080468
