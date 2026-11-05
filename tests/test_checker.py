@@ -35,16 +35,31 @@ def server(name="pg-demo-9", engine="pg", version="13", sku="Standard_D2ds_v5", 
 
 
 class FakeAz:
-    def __init__(self, pages, login=True):
+    """Answers the inventory query from `pages` and the subscription query from `subs`.
+
+    `subs` defaults to the subscriptions of the servers in `pages`. `subs_error` is a (code, out, err)
+    reply to every subscription query instead.
+    """
+
+    def __init__(self, pages, login=True, subs=None, subs_error=None):
         self.pages = list(pages)
         self.login = login
         self.calls = []
+        if subs is None:
+            subs = sorted({r.get("subscriptionId") for p in self.pages if isinstance(p, dict)
+                           for r in p.get("data") or [] if isinstance(r, dict) and r.get("subscriptionId")})
+        self.subs = subs
+        self.subs_error = subs_error
 
     def __call__(self, args):
         self.calls.append(args)
         if args[1:3] == ["account", "show"]:
             return (0, "{}", "") if self.login else (1, "", "ERROR: Please run 'az login' to setup account.")
         if args[1:3] == ["graph", "query"]:
+            if args[args.index("-q") + 1] == chk.SUBS_KQL:
+                if self.subs_error is not None:
+                    return self.subs_error
+                return 0, json.dumps({"data": [{"subscriptionId": s} for s in self.subs]}), ""
             return 0, json.dumps(self.pages.pop(0)), ""
         raise AssertionError(f"unexpected az call {args}")
 
@@ -192,7 +207,8 @@ def test_ac7_network_limited_to_az_and_prices_host():
 def test_az_calls_are_read_only(capsys):
     runner = FakeAz([fixture("checker_inventory_ac1.json")])
     run(capsys, [], runner=runner)
-    assert [c[1:3] for c in runner.calls] == [["account", "show"], ["graph", "query"]]
+    assert [c[1:3] for c in runner.calls] == [["account", "show"], ["graph", "query"], ["graph", "query"]]
+    assert [c[c.index("-q") + 1] for c in runner.calls[1:]] == [chk.KQL, chk.SUBS_KQL]
 
 
 # --- status ---
@@ -576,4 +592,157 @@ def test_all_unknown_cost_summary_says_unknown():
 
 def test_scanned_count_line():
     rows = rows_for([server(name="a"), dict(server(name="b"), subscriptionId="sub-other"), server(name="c", version="16")])
-    assert chk.summary(rows)[0] == "Scanned 3 servers in 2 subscriptions."
+    assert chk.summary(rows, {"sub-demo", "sub-other"})[0] == "Scanned 3 servers in 2 subscriptions."
+    assert chk.summary(rows)[0] == "Scanned 3 servers in 2 subscriptions (subscriptions counted from servers only)."
+
+
+# --- subscription count ---
+
+def test_no_servers_one_subscription(capsys):
+    code, out = run(capsys, [], runner=FakeAz([{"data": []}], subs=["s1"]))
+    assert code == 0
+    assert "Scanned 0 servers in 1 subscription." in out.out
+    assert "counted from servers" not in out.out
+
+
+def test_two_servers_two_subscriptions(capsys):
+    servers = [dict(server(name="a"), subscriptionId="s1"), dict(server(name="b"), subscriptionId="s1")]
+    code, out = run(capsys, [], runner=FakeAz([{"data": servers}], subs=["s1", "s2"]))
+    assert code == 1
+    assert "Scanned 2 servers in 2 subscriptions." in out.out
+
+
+@pytest.mark.parametrize("failure", [(1, "", "ERROR: (BadRequest) query failed"), (0, "not json", ""),
+                                     (0, json.dumps([1]), "")])
+def test_subscription_query_failure_falls_back_to_servers(capsys, failure):
+    servers = [dict(server(name="a"), subscriptionId="s1"), dict(server(name="b", version="16"), subscriptionId="s1")]
+    code, out = run(capsys, [], runner=FakeAz([{"data": servers}], subs_error=failure))
+    ok_code, _ = run(capsys, [], runner=FakeAz([{"data": servers}], subs=["s1"]))
+    assert code == ok_code == 1
+    assert "Scanned 2 servers in 1 subscription (subscriptions counted from servers only)." in out.out
+    assert out.err.startswith("warning: subscription count failed (") and out.err.endswith("; counting from servers\n")
+    assert out.err.count("\n") == 1
+
+
+@pytest.mark.parametrize("failure,message", [
+    ((1, "", "ERROR: Please run 'az login' to setup account."), "az login"),
+    ((2, "", "ERROR: 'graph' is misspelled or not recognized by the system."), "resource-graph"),
+])
+def test_subscription_query_env_error_exit_3(capsys, failure, message):
+    code, out = run(capsys, [], runner=FakeAz([{"data": [server()]}], subs_error=failure))
+    assert code == 3 and message in out.err and out.err.count("\n") == 1
+    assert out.out == ""
+
+
+def test_subscription_query_az_not_runnable_exit_3(capsys):
+    inner = FakeAz([{"data": []}])
+
+    def runner(args):
+        if args[1:3] == ["graph", "query"] and args[args.index("-q") + 1] == chk.SUBS_KQL:
+            raise chk.EnvError("Cannot run az (az): gone")
+        return inner(args)
+
+    code, out = run(capsys, [], runner=runner)
+    assert code == 3 and "Cannot run az" in out.err
+
+
+def test_subscription_query_pages_and_filters():
+    pages = [{"data": [{"subscriptionId": "s1"}], "skip_token": "t2"}, {"data": [{"subscriptionId": "s2"}, {}]}]
+    calls = []
+
+    def runner(args):
+        calls.append(args)
+        return 0, json.dumps(pages[len(calls) - 1]), ""
+
+    assert chk.query_subscriptions(runner, ["s1", "s2"]) == {"s1", "s2"}
+    first, second = calls
+    assert first[first.index("-q") + 1] == chk.SUBS_KQL
+    assert first[first.index("--subscriptions") + 1:first.index("--subscriptions") + 3] == ["s1", "s2"]
+    assert second[second.index("--skip-token") + 1] == "t2"
+
+
+def test_union_counts_server_subscription_missing_from_query(capsys):
+    servers = [dict(server(name="a"), subscriptionId="s1"), dict(server(name="b"), subscriptionId="s2")]
+    _, out = run(capsys, [], runner=FakeAz([{"data": servers}], subs=["s1"]))
+    assert "Scanned 2 servers in 2 subscriptions." in out.out
+
+
+@pytest.mark.parametrize("reply,reason", [
+    ({"data": [{"subscriptionId": "s1"}], "skip_token": "t1"}, "more than 1 pages"),
+    ({"data": [], "skip_token": "same"}, "repeated skip token"),
+])
+def test_subscription_query_paging_failure_falls_back(capsys, monkeypatch, reply, reason):
+    if "pages" in reason:
+        monkeypatch.setattr(chk, "MAX_INVENTORY_PAGES", 1)
+    runner = FakeAz([{"data": [server()]}], subs_error=(0, json.dumps(reply), ""))
+    code, out = run(capsys, [], runner=runner)
+    assert code == 1
+    assert "Scanned 1 server in 1 subscription (subscriptions counted from servers only)." in out.out
+    assert out.err.startswith("warning: subscription count failed (") and reason in out.err
+
+
+def test_subscriptions_flag_reaches_subscription_query(capsys):
+    runner = FakeAz([{"data": []}], subs=["s1"])
+    code, out = run(capsys, [], "--subscriptions", "s1", runner=runner)
+    sub_call = next(c for c in runner.calls if chk.SUBS_KQL in c)
+    assert sub_call[sub_call.index("--subscriptions") + 1] == "s1"
+    assert code == 0 and "Scanned 0 servers in 1 subscription." in out.out
+
+
+def test_empty_inventory_and_failed_subscription_query_shows_marker(capsys):
+    runner = FakeAz([{"data": []}], subs_error=(1, "", "ERROR: (BadRequest) nope"))
+    code, out = run(capsys, [], runner=runner)
+    assert code == 0
+    assert "Scanned 0 servers in 0 subscriptions (subscriptions counted from servers only)." in out.out
+
+
+def test_empty_subscription_result_with_servers_shows_marker(capsys):
+    _, out = run(capsys, [], runner=FakeAz([{"data": [server()]}], subs=[]))
+    assert "Scanned 1 server in 1 subscription (subscriptions counted from servers only)." in out.out
+
+
+def test_subscription_id_case_counted_once(capsys):
+    guid = "0000000a-0000-0000-0000-00000000000b"
+    servers = [dict(server(), subscriptionId=guid.upper())]
+    _, out = run(capsys, [], runner=FakeAz([{"data": servers}], subs=[guid]))
+    assert "Scanned 1 server in 1 subscription." in out.out
+
+
+def test_non_string_subscription_ids_ignored():
+    def runner(args):
+        return 0, json.dumps({"data": [{"subscriptionId": 5}, {"subscriptionId": ""}, {"subscriptionId": None},
+                                       {"subscriptionId": "S1"}]}), ""
+
+    assert chk.query_subscriptions(runner) == {"s1"}
+
+
+# --- free-tier note ---
+
+@pytest.mark.parametrize("version", ["13", "14"])
+def test_b1ms_affected_gets_free_tier_note(version):
+    row = rows_for([server(version=version, sku="Standard_B1ms")])[0]
+    assert row["_status"] in chk.AFFECTED
+    assert chk.FREE_TIER_NOTE in row["notes"]
+    assert row["monthly_cost_usd"] == "51.10"
+
+
+@pytest.mark.parametrize("version,sku", [("13", "Standard_D2ds_v5"), ("16", "Standard_B1ms"), ("10", "Standard_B1ms")])
+def test_no_free_tier_note_for_other_sku_or_status(version, sku):
+    row = rows_for([server(version=version, sku=sku)])[0]
+    if sku == "Standard_B1ms":
+        assert row["_status"] not in chk.AFFECTED
+    assert chk.FREE_TIER_NOTE not in row["notes"]
+
+
+@pytest.mark.parametrize("kwargs", [{"state": "Stopped"}, {"location": "westeurope"}])
+def test_no_free_tier_note_on_stopped_or_unknown_cost_b1ms(kwargs):
+    row = rows_for([server(sku="Standard_B1ms", **kwargs)])[0]
+    assert row["_status"] in chk.AFFECTED
+    assert chk.FREE_TIER_NOTE not in row["notes"]
+
+
+def test_summary_free_tier_line():
+    rows = rows_for([server(name="a", sku="Standard_B1ms"), server(name="b", sku="Standard_B1ms", version="14"),
+                     server(name="c")])
+    assert "2 rows may be covered by a free tier (see notes)." in chk.summary(rows, {"sub-demo"})
+    assert not any("free tier" in line for line in chk.summary(rows_for([server()]), {"sub-demo"}))

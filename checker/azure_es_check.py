@@ -64,6 +64,15 @@ KQL = (
     " replicationRole = tostring(properties.replicationRole), state = tostring(properties.state)"
     " | order by id asc"
 )
+SUBS_KQL = (
+    "resourcecontainers"
+    " | where type =~ 'microsoft.resources/subscriptions'"
+    " | project subscriptionId"
+    " | order by subscriptionId asc"
+)
+FREE_TIER_SKU = "standard_b1ms"
+FREE_TIER_NOTE = "if this is a free-account B1ms server, the free tier may cover the extended support charge"
+COUNTED_FROM_SERVERS = "(subscriptions counted from servers only)"
 
 COLUMNS = [
     "server", "resource_group", "subscription", "engine", "version", "region",
@@ -73,6 +82,10 @@ COLUMNS = [
 
 class EnvError(Exception):
     pass
+
+
+class QueryError(EnvError):
+    """A graph query failure that is not about az, login or the extension."""
 
 
 class PriceTruncated(ValueError):
@@ -109,10 +122,10 @@ def check_login(runner):
         raise EnvError("You are not logged in to Azure. Run 'az login' first.")
 
 
-def query_inventory(runner, subscriptions=None):
+def graph_query(runner, kql, subscriptions=None):
     rows, token, seen = [], None, set()
     for _ in range(MAX_INVENTORY_PAGES):
-        args = ["graph", "query", "-q", KQL, "--first", str(PAGE_SIZE)]
+        args = ["graph", "query", "-q", kql, "--first", str(PAGE_SIZE)]
         if subscriptions:
             args += ["--subscriptions", *subscriptions]
         if token:
@@ -126,22 +139,34 @@ def query_inventory(runner, subscriptions=None):
             if "az login" in low or "not logged in" in low:
                 raise EnvError("You are not logged in to Azure. Run 'az login' first.")
             first = text.splitlines()[0] if text else f"exit code {code}"
-            raise EnvError(f"az graph query failed: {first}")
+            raise QueryError(f"az graph query failed: {first}")
         try:
             page = json.loads(out)
         except (json.JSONDecodeError, TypeError):
-            raise EnvError("az graph query returned output that is not JSON.") from None
+            raise QueryError("az graph query returned output that is not JSON.") from None
         data = page.get("data") if isinstance(page, dict) else None
         if not isinstance(data, list) or not all(isinstance(r, dict) for r in data):
-            raise EnvError("az graph query returned an unexpected shape (no 'data' list).")
+            raise QueryError("az graph query returned an unexpected shape (no 'data' list).")
         rows.extend(data)
         token = page.get("skip_token") or page.get("skipToken")
         if not token:
             return rows
         if not isinstance(token, str) or token in seen:
-            raise EnvError("az graph query returned a repeated skip token. Stopped paging.")
+            raise QueryError("az graph query returned a repeated skip token. Stopped paging.")
         seen.add(token)
-    raise EnvError(f"az graph query returned more than {MAX_INVENTORY_PAGES} pages. Use --subscriptions to narrow it.")
+    raise QueryError(f"az graph query returned more than {MAX_INVENTORY_PAGES} pages. Use --subscriptions to narrow it.")
+
+
+def query_inventory(runner, subscriptions=None):
+    return graph_query(runner, KQL, subscriptions)
+
+
+def query_subscriptions(runner, subscriptions=None):
+    return sub_ids(r.get("subscriptionId") for r in graph_query(runner, SUBS_KQL, subscriptions))
+
+
+def sub_ids(values):
+    return {v.lower() for v in values if isinstance(v, str) and v.strip()}
 
 
 def load_dataset(path):
@@ -374,6 +399,8 @@ def build_rows(inventory, records, today, *, fetcher=None, price_items=None):
                     elif ha:
                         high = low * 2
                         notes.append("HA standby billing not documented")
+                    if (srv.get("skuName") or "").strip().lower() == FREE_TIER_SKU:
+                        notes.append(FREE_TIER_NOTE)
         if status == UNKNOWN:
             notes.append("no dataset record for this version" if record is None else "extended support dates not published")
 
@@ -431,9 +458,12 @@ def total_text(rows):
     return cost_text(sum(r["_low"] for r in priced), sum(r["_high"] for r in priced))
 
 
-def summary(rows):
-    subs = {r["subscription"] for r in rows if r["subscription"]}
-    lines = [f"Scanned {plural(len(rows), 'server')} in {plural(len(subs), 'subscription')}."]
+def summary(rows, subscriptions=None):
+    """subscriptions: the visible subscription IDs, or None when only the server rows are known."""
+    subs = sub_ids(r["subscription"] for r in rows)
+    marker = f" {COUNTED_FROM_SERVERS}" if subscriptions is None or (not subscriptions and rows) else ""
+    subs |= sub_ids(subscriptions or ())
+    lines = [f"Scanned {plural(len(rows), 'server')} in {plural(len(subs), 'subscription')}{marker}."]
     affected = [r for r in rows if r["_status"] in AFFECTED]
     past = sum(1 for r in rows if r["_status"] == PAST_ES)
     unknown_version = sum(1 for r in rows if r["_status"] == UNKNOWN)
@@ -452,6 +482,9 @@ def summary(rows):
         unpriced = sum(1 for r in affected if r["_low"] is None)
         if unpriced:
             lines.append(f"Cost is unknown for {plural(unpriced, 'affected server')} and is not in the total.")
+        free = sum(1 for r in affected if FREE_TIER_NOTE in r["notes"])
+        if free:
+            lines.append(f"{plural(free, 'row')} may be covered by a free tier (see notes).")
     elif not (past or unknown_version):
         lines.append("No affected servers: none is in extended support or starts it within 365 days.")
     else:
@@ -510,6 +543,11 @@ def main(argv=None, *, runner=None, fetcher=None):
         price_items = load_prices_file(args.prices_file) if args.prices_file else None
         check_login(runner)
         inventory = query_inventory(runner, args.subscriptions)
+        try:
+            subscriptions = query_subscriptions(runner, args.subscriptions)
+        except QueryError as e:
+            print(f"warning: subscription count failed ({str(e).rstrip('.')}); counting from servers", file=sys.stderr)
+            subscriptions = None
     except EnvError as e:
         print(f"error: {e}", file=sys.stderr)
         return 3
@@ -519,7 +557,7 @@ def main(argv=None, *, runner=None, fetcher=None):
     if table:
         print(table)
         print()
-    for line in summary(rows):
+    for line in summary(rows, subscriptions):
         print(line)
     verified = sorted({r["_verified"] for r in rows if r["_verified"]}) or \
         sorted({r["verified_on"] for r in records.values() if r.get("verified_on")})

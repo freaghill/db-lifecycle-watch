@@ -9,6 +9,7 @@ It is one Python file and uses only the standard library. It is tested on Python
 It reads:
 
 - the server list, with `az graph query` (Azure Resource Graph). The query reads name, resource group, subscription, region, SKU, version, HA mode, replication role and state;
+- the IDs of the subscriptions you can see, with a second read-only `az graph query`, so the summary can count subscriptions that have no servers. If this query fails for a reason other than login or the missing extension, the count comes from the server list, a warning goes to stderr, and the summary line says "(subscriptions counted from servers only)". The line says this too when the query returns no subscriptions but servers were found. With `--subscriptions`, the count covers only the named subscriptions that Resource Graph returns;
 - your login state, with `az account show`;
 - lifecycle dates from `data/lifecycle.json` in this repository;
 - extended support prices from the public [Azure Retail Prices API](https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices) at `https://prices.azure.com`, or from a file you pass with `--prices-file`.
@@ -80,6 +81,7 @@ az graph query --first 1000 -o table -q "resources | where type in~ ('microsoft.
 - Each read replica is its own server and is priced on its own.
 - Stopped servers cost 0. Microsoft does not bill stopped servers for extended support. Azure starts a stopped server again after 7 days, and billing starts again with it.
 - vCores come from the SKU name: `Standard_D4ds_v5` is 4, `Standard_E16ds_v5` is 16, and Burstable `Standard_B1ms` is 1 and `Standard_B2s` is 2. If the name does not match this pattern, the cost shows as unknown.
+- A free-account `Standard_B1ms` server may be billed through a $0 free tier meter for extended support, so the shown cost may be too high. This is not verified. Running B1ms rows with a known cost carry the note "if this is a free-account B1ms server, the free tier may cover the extended support charge", and the cost is not changed.
 - The year 3 price rule (twice the year 1 and 2 rate) is not applied, because no date or meter is published for it.
 
 ## Where the dates come from
