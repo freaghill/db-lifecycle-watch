@@ -2,8 +2,10 @@
   "data_verified_newest": "2026-11-04",
   "data_verified_oldest": "2026-11-04",
   "records": 20,
-  "sources_changed": [],
-  "sources_checked_on": "2026-11-05",
+  "sources_changed": [
+    "azure-retail-prices-extended-support"
+  ],
+  "sources_checked_on": "2026-11-09",
   "sources_failed": [],
   "sources_ok": 9,
   "sources_total": 9
