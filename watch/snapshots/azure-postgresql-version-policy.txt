@@ -1,6 +1,7 @@
 ## Support policy
 
 PostgreSQL Version | What's New | Azure Standard Support Start Date | Azure Standard Support End Date
+PostgreSQL 19 (preview, East Asia only) | Release notes | 19-Nov-2026 | 12-Nov-2031
 PostgreSQL 18 | Release notes | 25-Sep-2025 | 14-Nov-2030
 PostgreSQL 17 | Release notes | 30-Sep-2024 | 8-Nov-2029
 PostgreSQL 16 | Release notes | 15-Oct-2023 | 9-Nov-2028
